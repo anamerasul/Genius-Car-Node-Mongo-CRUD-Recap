@@ -13,6 +13,8 @@ const Services = () => {
     useEffect(() => {
 
         const url = `http://localhost:${port}/service`
+        console.log(url)
+
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data));
