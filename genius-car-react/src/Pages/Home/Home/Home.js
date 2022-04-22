@@ -5,7 +5,7 @@ import Banner from '../Banner/Banner';
 import Experts from '../Experts/Experts';
 import Services from '../Services/Services';
 
-const Home = () => {
+const Home = ({ port }) => {
     return (
         <>
 
@@ -16,7 +16,7 @@ const Home = () => {
                 <title>Home - Geneius car</title>
             </Helmet> */}
             <Banner></Banner>
-            <Services></Services>
+            <Services port={port}></Services>
             <Experts></Experts>
         </>
     );

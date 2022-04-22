@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-const ServiceDetail = () => {
-
-    const port = 3002
+const ServiceDetail = ({ port }) => {
 
     const { serviceId } = useParams();
 

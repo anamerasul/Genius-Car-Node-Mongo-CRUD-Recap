@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
 import './Services.css';
 
-const Services = () => {
-
-    const port = 3002
-
-
+const Services = ({ port }) => {
 
     const [services, setServices] = useState([]);
 

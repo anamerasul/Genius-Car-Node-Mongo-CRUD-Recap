@@ -14,6 +14,8 @@ import AddService from './Pages/AddService/AddService'
 import RouteWithTitle from './Pages/Shared/RouteWithTitle/RouteWithTitle';
 
 function App() {
+
+  const port = 3002
   return (
     <div>
       <Header></Header>
@@ -23,7 +25,7 @@ function App() {
         <Route path="/" element={
 
           <RequireAuth>
-            <Home></Home>
+            <Home port={port}></Home>
           </RequireAuth>
 
         }></Route>
@@ -34,7 +36,7 @@ function App() {
           </RequireAuth>
 
         }></Route>
-        <Route path='/service/:serviceId' element={<ServiceDetail></ServiceDetail>}></Route>
+        <Route path='/service/:serviceId' element={<ServiceDetail port={port}></ServiceDetail>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
@@ -46,7 +48,7 @@ function App() {
 
         <Route path="/addservice" element={
           <RequireAuth>
-            <AddService></AddService>
+            <AddService port={port}></AddService>
           </RequireAuth>
         }></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

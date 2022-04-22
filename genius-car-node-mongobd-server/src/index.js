@@ -54,6 +54,16 @@ const run = async () => {
 
 
 
+        app.post(`/service`, async (req, res) => {
+
+            const newService = req.body
+            const result = await serviceCollection.insertOne(newService)
+
+            res.send(result)
+        })
+
+
+
         // const users = { name: 'mahi', email: 'mahi@gmail.com' }
         // const result = await usercollection.insertOne(users)
         // console.log(`inserted with the _id: ${result.insertedId}`)
