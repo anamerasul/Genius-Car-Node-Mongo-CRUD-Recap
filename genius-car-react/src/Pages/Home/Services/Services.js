@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Service from '../Service/Service';
+import useServicesHook from './../../../Hooks/useServicesHooks'
 import './Services.css';
 
 const Services = ({ port }) => {
 
-    const [services, setServices] = useState([]);
+    const [services] = useServicesHook([]);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const url = `http://localhost:${port}/service`
-        console.log(url)
+    //     const url = `http://localhost:${port}/service`
+    //     console.log(url)
 
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setServices(data));
-    }, [])
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setServices(data));
+    // }, [])
 
     // const { id } = services._id
     // console.log(id);

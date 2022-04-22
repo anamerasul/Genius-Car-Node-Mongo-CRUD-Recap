@@ -52,7 +52,7 @@ const run = async () => {
             res.send(service)
         })
 
-
+        // post
 
         app.post(`/service`, async (req, res) => {
 
@@ -62,7 +62,14 @@ const run = async () => {
             res.send(result)
         })
 
-
+        // delete
+        // DELETE
+        app.delete('/service/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await serviceCollection.deleteOne(query);
+            res.send(result);
+        });
 
         // const users = { name: 'mahi', email: 'mahi@gmail.com' }
         // const result = await usercollection.insertOne(users)

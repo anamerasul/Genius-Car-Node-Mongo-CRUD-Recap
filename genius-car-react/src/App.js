@@ -11,6 +11,8 @@ import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
 import AddService from './Pages/AddService/AddService'
+
+import ManageServices from './Pages/ManageServices/ManageServices'
 import RouteWithTitle from './Pages/Shared/RouteWithTitle/RouteWithTitle';
 
 function App() {
@@ -51,9 +53,16 @@ function App() {
             <AddService port={port}></AddService>
           </RequireAuth>
         }></Route>
+        <Route path="/manage" element={
+          <RequireAuth>
+            <ManageServices port={port}></ManageServices>
+          </RequireAuth>
+        }></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+
+      <></>
     </div>
   );
 }
